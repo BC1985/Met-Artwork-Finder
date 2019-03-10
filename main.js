@@ -10,6 +10,7 @@ function watchForm() {
         const url = baseUrl + '?' + query + '=' + search;
         getUrl(url);
 console.log(url)
+        $('.results').empty();
 
 });
 }
@@ -32,8 +33,8 @@ function getUrl(url) {
 
 function getObjectUrl(responseJson) {
     let data = responseJson.objectIDs;
-    let objID=data[0]
-    let url = 'https://collectionapi.metmuseum.org/public/collection/v1/objects/'+objID;
+    let objId=data[42]
+    let url = 'https://collectionapi.metmuseum.org/public/collection/v1/objects/'+objId;
     fetch(url)
         .then(response => {
             if (response.ok) {
@@ -47,18 +48,34 @@ function getObjectUrl(responseJson) {
         });
 }
 
+
+//make function that will assign random number for objID array itme with every submit//
+
 function showResults(responseJson) {
-     const data=responseJson.primaryImage;
-    
-        $('.results').append(
-            `<img src=${data}>`
-        )  
+
+    const data=responseJson;
+        $('.results').append(`
+    <img src=${data.primaryImage} class='img'>
+    <h3>${data.artistDisplayName}</h3>
+    <h4 class='title'>${data.title} </h4>
+    <p>${data.objectDate}</p>
+    <p>${data.medium}</p>
+    <p>${data.period}</p>
+    <p>${data.dynasty}</p>
+    <p>${data.culture}</p>
+    <p>${data.country}</p>
+    <button class='button'>Next</button>
+    `  
+    ); 
+   //BUTTON UNDER PICTURE SHOULD SCROLL TO NEXT IMAGE IN ARRAY
+    //??????????
+    $('#search-term').val('')
 }
 //RETURN RANDOM IMAGE FROM JSON FILE
 
-/*function getRandom() {
+let random = function getRandom() {
     return responseJson[Math.floor(Math.random() * responseJson.length)];
-}*/
+}
 
 function renderPage() {
     watchForm();
