@@ -9,6 +9,7 @@ body   {
 .results{
 
     float:right;
+    clear:left;
 }
 
 .img {
@@ -35,4 +36,12 @@ button {
     color:white;
     padding: 5px;
     border-radius: 5px;
+}
+
+a:link{
+color:#D5C9C9
+}
+a:visited{
+color:#D5C9C9
+
 }
