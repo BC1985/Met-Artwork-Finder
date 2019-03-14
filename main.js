@@ -8,6 +8,7 @@ function watchForm() {
     event.preventDefault();
         const query = 'q'
         let search = $('#search-term').val();
+        $('.keyword').text(`Results for ${search}.`)
         const url = baseUrl + '?' + query + '=' + search;
         getUrl(url);
        $('.results').empty();
@@ -25,13 +26,14 @@ const searching= 'Searching...'
             if (response.ok) {
                 return response.json();
             }
-            throw Error(response.statusText);
+            throw new Error(error);
         })
         .then(responseJson => {
             objIDs= responseJson.objectIDs;
             getObjectUrl()
         })
         .catch(err => {
+            $('.info').empty();
             $('#message').text(`${error}`);
         });
         
@@ -53,7 +55,7 @@ function getObjectUrl() {
         .then(responseJson => showResults(responseJson))
         
         .catch(err => {
-            $('#message').text(`${error}`);
+            $('#message').text(`${err}`);
         });
 }
 
@@ -67,9 +69,11 @@ function showResults(responseJson) {
     $('#loading').remove();
     $('.results').empty();
     $('#message').empty();
-    $('.results').append(`
-    <a target='_blank' href='${keywordMatchArray.primaryImage}'><img src=${keywordMatchArray.primaryImage}  class='img'></a>
-    <a target='_blank' href='https://en.wikipedia.org/wiki/${keywordMatchArray.artistDisplayName}'><h3>${keywordMatchArray.artistDisplayName}</h3></a>
+    $('.info').empty();
+    $('.results').append(
+        `<a target='_blank' href='${keywordMatchArray.primaryImage}'><img src=${keywordMatchArray.primaryImage}  class='img'></a>`)
+   $('.info').append(
+    `<a target='_blank' href='https://en.wikipedia.org/wiki/${keywordMatchArray.artistDisplayName}'><h3>${keywordMatchArray.artistDisplayName}</h3></a>
     <h4 class='title'>${keywordMatchArray.title} </h4>
     <p>${keywordMatchArray.objectDate}</p>
     <p>${keywordMatchArray.medium}</p>
@@ -79,8 +83,7 @@ function showResults(responseJson) {
     <p>${keywordMatchArray.state}</p>
     <p>${keywordMatchArray.country}</p>
     <button id='next'>Next item</button>
-    `  
-        );
+    `   );
        console.log(responseJson)
            //when the next button is clicked, another api request made with for the next array item in keywordMatchArray
     $('#next').on('click', function(){
@@ -89,7 +92,7 @@ function showResults(responseJson) {
 
     })
     
-    //$('#search-term').val('')
+    $('#search-term').val('')
 }
 
 function renderPage() {

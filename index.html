@@ -15,15 +15,21 @@
     <div class="container">
         <div class="header">
             <h1>The Metropolitan Museum Artwork Finder</h1>
-            <h3>Look up artwork by keyword (some artworks may not have imges).</h3>
+            <h3>Look up artwork by keyword</h3>
+            <h3 class="keyword"></h3>
+
             <form >
                 <input type="text" id="search-term"
-                 placeholder="example: self portrait" required onfocus="this.value='';">
+                 placeholder="example: self portrait" required>
                 <button type="submit">search</button>
+
             </form>
             <div id="message"></div>
         </div>
+        <div class="wrapper">
         <div class="results"></div>
+        <div class="info"></div>
+        </div>
     </div>
         <script src="main.js"></script>
 </body>

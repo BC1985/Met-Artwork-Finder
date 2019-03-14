@@ -1,19 +1,29 @@
 body   {
  
-    padding:80px;
     background-color: #4E4343;
     color:#D5C9C9;
+    box-sizing: border-box;
+    margin-right: 20px;
+    margin-left:20px;
 }
 
 .results{
 
-    float:right;
-    clear:left;
+    text-align: center;
+    
 }
-
+.info{
+    text-align: left;
+}
+.wrapper {
+    display:flex;
+    align-items: center;
+}
 .img {
     width:400px;
-    border:5px double gray;
+    border:2px solid black;
+    margin-right: 10px;
+
 }
 .hidden {
     display:none;
@@ -28,6 +38,7 @@ input {
     background:lightgray;
     border:1px black solid;
     padding:5px;
+    margin:20px;
 }
 
 button {
@@ -35,6 +46,12 @@ button {
     color:white;
     padding: 5px;
     border-radius: 5px;
+}
+
+
+
+.container  {
+text-align: center;
 }
 
 a:link{
