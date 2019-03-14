@@ -17,47 +17,47 @@ function watchForm() {
 }
 //ACCESS ENTIRE CATALOG
 function getUrl(url) {
-
+const error= 'Could not find what you were looking for.'
     fetch(url)
         .then(response => {
             if (response.ok) {
                 return response.json();
             }
-            throw new Error(response.statusText);
+            throw new Error(error);
         })
-        //FETCH SPECIFIC ITEM ID
         .then(responseJson => {
             objIDs= responseJson.objectIDs;
             getObjectUrl()
         })
         .catch(err => {
-            $('#error-message').text(`woops. ${err.message}`);
-        } ); 
+            $('#error-message').text(`Woops... ${error}`);
+        });
+        
 }
 
 function getObjectUrl() {
     let objId = objIDs[imageIndex]
-    
     let url = 'https://collectionapi.metmuseum.org/public/collection/v1/objects/'+objId;
     fetch(url)
-        .then(response => {
-            if (response.ok) {
+        .then($('#loading').text('Retrieving artwork...'))
+              .then(response => {
+            if (response.ok) {  
                 return response.json();
             }
             throw new Error(response.statusText);
         })
         .then(responseJson => showResults(responseJson))
+        
         .catch(err => {
-            $('#error-message').text(`woopsy. ${err.message}`);
+            $('#error-message').text(`Woopsy... ${err}`);
         });
-        console.log(objId)
 }
 
 //make function that will assign random number for objID array itme with every submit//
 
 function showResults(responseJson) {
     let keywordMatchArray = responseJson;
-  
+    $('#loading').remove();
     $('.results').empty();
     $('.results').append(`
     <a target='_blank' href='${keywordMatchArray.primaryImage}'><img src=${keywordMatchArray.primaryImage}  class='img'></a>
@@ -77,16 +77,14 @@ function showResults(responseJson) {
         $('#next').on('click', function(){
             imageIndex++;
             getObjectUrl()
+
         })
     
     $('#search-term').val('')
 }
 
-//number of results pulls same number of array items from keywordMatchArray array
-//?????????????
 function renderPage() {
-    watchForm();
-    
+    watchForm();   
 }
 
 $(renderPage)
