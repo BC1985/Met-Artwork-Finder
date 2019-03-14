@@ -17,41 +17,48 @@ function watchForm() {
 }
 //ACCESS ENTIRE CATALOG
 function getUrl(url) {
-const error= 'Could not find what you were looking for.'
+const error= 'Could not find anything. Try a different keyword.'
+const searching= 'Searching...'
     fetch(url)
+        .then($('#message').text(searching))
         .then(response => {
             if (response.ok) {
                 return response.json();
             }
-            throw new Error(error);
+            throw Error(response.statusText);
         })
         .then(responseJson => {
             objIDs= responseJson.objectIDs;
             getObjectUrl()
         })
         .catch(err => {
-            $('#error-message').text(`Woops... ${error}`);
+            $('#message').text(`${error}`);
         });
         
 }
 
 function getObjectUrl() {
     let objId = objIDs[imageIndex]
+    const error='Please type new keyword.'
+    const loading = 'Retrieving artwork...'
     let url = 'https://collectionapi.metmuseum.org/public/collection/v1/objects/'+objId;
     fetch(url)
-        .then($('#loading').text('Retrieving artwork...'))
+        .then($('#message').text(loading))
               .then(response => {
             if (response.ok) {  
                 return response.json();
             }
-            throw new Error(response.statusText);
+            throw new Error(error);
         })
         .then(responseJson => showResults(responseJson))
         
         .catch(err => {
-            $('#error-message').text(`Woopsy... ${err}`);
+            $('#message').text(`${error}`);
         });
 }
+
+
+
 
 //make function that will assign random number for objID array itme with every submit//
 
@@ -59,6 +66,7 @@ function showResults(responseJson) {
     let keywordMatchArray = responseJson;
     $('#loading').remove();
     $('.results').empty();
+    $('#message').empty();
     $('.results').append(`
     <a target='_blank' href='${keywordMatchArray.primaryImage}'><img src=${keywordMatchArray.primaryImage}  class='img'></a>
     <a target='_blank' href='https://en.wikipedia.org/wiki/${keywordMatchArray.artistDisplayName}'><h3>${keywordMatchArray.artistDisplayName}</h3></a>
@@ -68,19 +76,20 @@ function showResults(responseJson) {
     <p>${keywordMatchArray.period}</p>
     <p>${keywordMatchArray.dynasty}</p>
     <p>${keywordMatchArray.culture}</p>
+    <p>${keywordMatchArray.state}</p>
     <p>${keywordMatchArray.country}</p>
-    <button id='next'>Next</button>
+    <button id='next'>Next item</button>
     `  
         );
-       
-    //when the next button is clicked, another api request made with for the next array item in keywordMatchArray
-        $('#next').on('click', function(){
-            imageIndex++;
-            getObjectUrl()
+       console.log(responseJson)
+           //when the next button is clicked, another api request made with for the next array item in keywordMatchArray
+    $('#next').on('click', function(){
+    imageIndex++;
+    getObjectUrl()
 
-        })
+    })
     
-    $('#search-term').val('')
+    //$('#search-term').val('')
 }
 
 function renderPage() {

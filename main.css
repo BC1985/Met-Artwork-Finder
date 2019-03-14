@@ -1,7 +1,6 @@
 body   {
-    /* margin-left:50px; */
-    /* margin-right: 50px; */
-    padding:30px;
+ 
+    padding:80px;
     background-color: #4E4343;
     color:#D5C9C9;
 }
@@ -32,7 +31,7 @@ input {
 }
 
 button {
-    background-color: rgb(71, 63, 63);
+    background-color: rgb(99, 89, 89);
     color:white;
     padding: 5px;
     border-radius: 5px;
@@ -43,5 +42,14 @@ color:#D5C9C9
 }
 a:visited{
 color:#D5C9C9
+
+}
+
+h1 {
+    font-family: 'Quattrocento', serif;
+
+}
+h3, p {
+    font-family: 'Fanwood Text', serif;
 
 }
