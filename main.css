@@ -35,6 +35,7 @@ body   {
 
 .title {
     font-style: italic;
+  
 }
 
 input {
@@ -87,11 +88,74 @@ h3, p {
 }
 
 footer  {
-    padding:10px;
+    padding:5px;
     position: relative;
     bottom: 0;
     left:0;
     color:wheat;
     text-align:center;
     width:100%;
+    margin-top:40px;
+}
+
+footer> p {
+    margin-block-start:0em;
+    margin-block-end:0em;
+
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1224px) {
+
+
+.img {
+    width:400px;
+ 
+
+}
+.wrapper{
+    width:700px;
+}
+
+.info{
+    margin-right:auto;
+    margin-left: auto;
+}
+/* DONT TOUCH */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1224px) {
+
+.img {
+    width:550px;
+ 
+}
+
+
+h1 {
+    font-size: 3em;
+}
+
+h4 {
+    font-size:1.2em;
+}
+
+p {
+    font-size: 20px;
+}
+
+input {
+    height: 20px;
+}
+
+button {
+    font-size:1.2em;
+}
+
+.wrapper{
+    width:600px;
+}
+
+ /*DONT TOUCH  */
 }

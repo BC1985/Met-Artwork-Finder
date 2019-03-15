@@ -8,7 +8,7 @@ function watchForm() {
     event.preventDefault();
         const query = 'q'
         let search = $('#search-term').val();
-        $('.keyword').text(`Results for ${search}. Click picture for full-size image. `)
+        $('.keyword').text(`Results for ${search} (Click picture for full-size image).`)
         const url = baseUrl + '?' + query + '=' + search;
         getUrl(url);
        $('.results').empty();
@@ -75,17 +75,16 @@ function showResults(responseJson) {
     $('#message').empty();
     $('.info').empty();
     $('.results').append(
-        `<a target='_blank' href='${keywordMatchArray.primaryImage}'><img src=${keywordMatchArray.primaryImage}  class='img'></a>
+        `<a target='_blank' href='${keywordMatchArray.primaryImage}'><img src=${keywordMatchArray.primaryImage} class='img'></a>
         `)
    $('.info').append(
     `<a target='_blank' href='https://en.wikipedia.org/wiki/${keywordMatchArray.artistDisplayName}'><h3>${keywordMatchArray.artistDisplayName}</h3></a>${keywordMatchArray.artistDisplayBio}
-    <h4 class='title'>${keywordMatchArray.title} </h4>
+    <h4 class='title'>${keywordMatchArray.title}</h4>
     <p>${keywordMatchArray.objectDate}</p>
     <p>${keywordMatchArray.medium}</p>
     <p>${keywordMatchArray.period}</p>
     <p>${keywordMatchArray.dynasty}</p>
     <p>${keywordMatchArray.culture}</p>
-    <p>${keywordMatchArray.country}</p>
     <button id='next'>Next item</button>
     <footer>
             <a href="https://www.metmuseum.org/"><p>Visit the Metropolitan Museum Wesbite</p></a>
