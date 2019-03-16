@@ -89,7 +89,7 @@ function showResults(responseJson) {
     <footer>
             <a href="https://www.metmuseum.org/"><p>Visit the Metropolitan Museum Wesbite</p></a>
         </footer>
-    `   );
+    `   );   
        console.log(responseJson)
            //when the next button is clicked, another api request made with for the next array item in keywordMatchArray
     $('#next').on('click', function(){
