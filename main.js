@@ -83,6 +83,7 @@ function showResults(responseJson) {
     <h4 class='title'>${keywordMatchArray.title}</h4>
     <p>${keywordMatchArray.objectDate}</p>
     <p>${keywordMatchArray.medium}</p>
+    <p>${keywordMatchArray.country}</p>
     <p>${keywordMatchArray.period}</p>
     <p>${keywordMatchArray.dynasty}</p>
     <p>${keywordMatchArray.culture}</p>
