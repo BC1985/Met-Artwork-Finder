@@ -74,6 +74,7 @@ function showResults(responseJson) {
     $('.results').empty();
     $('#message').empty();
     $('.info').empty();
+    $('footer').removeClass('hidden');
     $('.results').append(
         `<a target='_blank' href='${keywordMatchArray.primaryImage}'><img src=${keywordMatchArray.primaryImage} class='img'></a>
         `)
@@ -86,9 +87,7 @@ function showResults(responseJson) {
     <p>${keywordMatchArray.dynasty}</p>
     <p>${keywordMatchArray.culture}</p>
     <button id='next'>Next item</button>
-    <footer>
-            <a href="https://www.metmuseum.org/"><p>Visit the Metropolitan Museum Wesbite</p></a>
-        </footer>
+    
     `   );   
        console.log(responseJson)
            //when the next button is clicked, another api request made with for the next array item in keywordMatchArray

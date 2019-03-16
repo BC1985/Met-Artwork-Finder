@@ -1,11 +1,21 @@
-body   {
+body, html  {
  
     background-color: #4E4343;
     color:#D5C9C9;
     box-sizing: border-box;
-    margin-right: 20px;
-    margin-left:20px;
-    margin-top:40px;
+    margin:40px 0px 0px 0px;
+    height: 100%;    
+    position: relative;
+}
+
+footer {
+ 
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding:10px;
+  background-color: rgb(39, 35, 35);
+  text-align: center;
 }
 
 .results{
@@ -56,6 +66,7 @@ button {
     padding: 5px;
     border-radius: 5px;
     display:inline;
+    cursor: pointer;
 }
 
 #next{
