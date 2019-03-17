@@ -5,7 +5,7 @@
 https://bc1985.github.io/Met-Artwork-Finder/
 
 ##### Screenshot
-<img src="images/Screenshot.png" width="500">
+<img src="Screenshot2.png" width="500">
 
 ##### Summary
 
