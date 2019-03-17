@@ -1,8 +1,11 @@
 'use strict'
 const baseUrl = 'https://collectionapi.metmuseum.org/public/collection/v1/search';
 
+// Array for iterating through index items
 let imageIndex = 0
-let objIDs=[];
+let objIDs = [];
+
+// When user clicks submit button
 function watchForm() {
     $('form').submit(event => {
     event.preventDefault();
@@ -12,14 +15,12 @@ function watchForm() {
         const url = baseUrl + '?' + query + '=' + search;
         getUrl(url);
        $('.results').empty();
-
-
 });
 }
-//ACCESS ENTIRE CATALOG
+// ACCESS ENTIRE CATALOG
 function getUrl(url) {
-const error= 'Could not find anything. Try a different keyword.'
-const searching= 'Searching...'
+const error = 'Could not find anything. Try a different keyword.'
+const searching = 'Searching...'
     fetch(url)
         .then($('#message').text(searching))
         .then(response => {
@@ -36,17 +37,17 @@ const searching= 'Searching...'
             $('.info').empty();
             $('#message').text(`${error}`);
             $('#search-term').val('')
-
-        });
-        
+        });       
 }
+// Get array of keyword-related items
 
 function getObjectUrl() {
-    let objId = objIDs[imageIndex]
-    const error='Please type new keyword.'
-    const loading = 'Retrieving artwork...'
+    let objId = objIDs[imageIndex];
+    const error ='Please type new keyword.';
+    const loading = 'Retrieving artwork...';
     let url = 'https://collectionapi.metmuseum.org/public/collection/v1/objects/'+objId;
     fetch(url)
+    // Handle DOM elements when fetching URL
         .then($('#message').text(loading))
         .then($('.info').empty())
         .then($('.results').empty())
@@ -57,27 +58,26 @@ function getObjectUrl() {
             throw new Error(error);
         })
         .then(responseJson => showResults(responseJson))
-        
         .catch(err => {
             $('#message').text(`${err}`);
         });
 }
-
-
-
-
-//make function that will assign random number for objID array itme with every submit//
+// Display search results
 
 function showResults(responseJson) {
+    // Returned JSON array from keyword search
     let keywordMatchArray = responseJson;
+    // Empties error or loading messages
     $('#loading').remove();
-    $('.results').empty();
     $('#message').empty();
+    // Empties container from previous searches
+    $('.results').empty();
     $('.info').empty();
-    $('footer').removeClass('hidden');
+    // Displays images
     $('.results').append(
         `<a target='_blank' href='${keywordMatchArray.primaryImage}'><img src=${keywordMatchArray.primaryImage} class='img'></a>
         `)
+    // Displays artwork info
    $('.info').append(
     `<a target='_blank' href='https://en.wikipedia.org/wiki/${keywordMatchArray.artistDisplayName}'><h3>${keywordMatchArray.artistDisplayName}</h3></a>${keywordMatchArray.artistDisplayBio}
     <h4 class='title'>${keywordMatchArray.title}</h4>
@@ -87,18 +87,16 @@ function showResults(responseJson) {
     <p>${keywordMatchArray.period}</p>
     <p>${keywordMatchArray.dynasty}</p>
     <p>${keywordMatchArray.culture}</p>
-    <button id='next'>Next item</button>
-    
-    `   );   
+    <button id='next'>Next item</button>`   
+    );   
        console.log(responseJson)
-           //when the next button is clicked, another api request made with for the next array item in keywordMatchArray
+        // Fetches the next index in the array when clicking the 'next' button
     $('#next').on('click', function(){
     imageIndex++;
     getObjectUrl()
-
     })
-    
-    $('#search-term').val('')
+    // Empties search field
+    $('#search-term').val('');
 }
 
 function renderPage() {
