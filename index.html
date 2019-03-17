@@ -12,17 +12,17 @@
 </head>
 <body>
     <div class="container">
-        <div class="header">
+        <header class="header" role="banner">
             <h1>The Metropolitan Museum Artwork Finder</h1>
             <h2>Browse artworks by keyword</h2>
-            <form >
+            <form role="search">
                 <input type="text" id="search-term"
-                 placeholder="example: self portrait" required>
-                <button type="submit">search</button>
+                 placeholder="Example: flowers" required>
+                <button type="submit">Search</button>
             </form>
                         <p class="keyword"></p>
             <div id="message"></div>
-        </div>
+        </header>
         <div class="wrapper">
         <div class="results"></div>
         <div class="info"></div>

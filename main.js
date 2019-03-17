@@ -11,7 +11,7 @@ function watchForm() {
     event.preventDefault();
         const query = 'q'
         let search = $('#search-term').val();
-        $('.keyword').text(`Results for ${search} (Click picture for full-size image).`)
+        $('.keyword').text(`Results for "${search}"`)
         const url = baseUrl + '?' + query + '=' + search;
         getUrl(url);
        $('.results').empty();
@@ -76,10 +76,11 @@ function showResults(responseJson) {
     // Displays images
     $('.results').append(
         `<a target='_blank' href='${keywordMatchArray.primaryImage}'><img src=${keywordMatchArray.primaryImage} class='img'></a>
-        `)
+        <p class="small">Click picture for full size image</p> `)
     // Displays artwork info
    $('.info').append(
-    `<a target='_blank' href='https://en.wikipedia.org/wiki/${keywordMatchArray.artistDisplayName}'><h3>${keywordMatchArray.artistDisplayName}</h3></a>${keywordMatchArray.artistDisplayBio}
+    `<a target='_blank' href='https://en.wikipedia.org/wiki/${keywordMatchArray.artistDisplayName}'><h3>${keywordMatchArray.artistDisplayName}</h3></a>
+    <p>${keywordMatchArray.artistDisplayBio}</p>
     <h4 class='title'>${keywordMatchArray.title}</h4>
     <p>${keywordMatchArray.objectDate}</p>
     <p>${keywordMatchArray.medium}</p>

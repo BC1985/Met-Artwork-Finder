@@ -1,4 +1,4 @@
-body, html  {
+body {
  
     background-color: #4E4343;
     color:#D5C9C9;
@@ -6,17 +6,9 @@ body, html  {
     margin:40px 0px 0px 0px;
     height: 100%;    
     position: relative;
+    padding:10px;
 }
 
-footer {
- 
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding:10px;
-  background-color: rgb(39, 35, 35);
-  text-align: center;
-}
 
 .results{
 
@@ -31,16 +23,11 @@ footer {
     margin-right: auto;
     margin-left: auto;
 }
-/*.wrapper {
-    display:flex;
-    align-items: center;
-    padding:10px;
-}*/
+
 .img {
     width:250px;
-    border:3px solid black;
-    /* margin-right: 10px; */
-    /* margin-left:10px; */
+    border:2px solid black;
+    margin-top:10px;
 
 }
 .hidden {
@@ -48,16 +35,16 @@ footer {
 }
 
 .title {
-    font-style: italic;
-  
+    font-style: italic; 
 }
+
 
 input {
     width:200px;
     background:lightgray;
     border:1px black solid;
     padding:5px;
-    margin:10px 10px 40px 0px;
+    margin:10px 10px 25px 0px;
 }
 
 button {
@@ -73,9 +60,6 @@ button {
     margin:10px;
 }
 
-.artist-bio {
-    display: inline;
-}
 .keyword{
     display:inline-block;
     margin:5px;
@@ -86,6 +70,7 @@ text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom:50px;
 }
 
 a:link{
@@ -98,8 +83,6 @@ color:#D5C9C9
 
 h1 {
     font-family: 'Quattrocento', serif;
-    margin-top:60px;
-
 }
 
 p, h4, h3 {
@@ -107,6 +90,11 @@ p, h4, h3 {
     margin-block-start: 5px;
 }
 
+.small{
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: lighter;
+}
 
 
 footer  {
