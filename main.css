@@ -7,6 +7,8 @@ body {
     height: 100%;    
     position: relative;
     padding:10px;
+    font-family: 'Lato', sans-serif;
+
 }
 
 
@@ -48,10 +50,12 @@ input {
 }
 
 button {
-    background-color:#515A5A;
-    color:white;
+    background-color: #BFBFBF;
+    color: #1C2833;
     padding: 5px;
     border-radius: 5px;
+    border:0;
+    font-size: 17px;
     display:inline;
     cursor: pointer;
 }
@@ -63,6 +67,7 @@ button {
 .keyword{
     display:inline-block;
     margin:5px;
+    font-family: 'Lato', sans-serif;
 }
 
 .container  {
@@ -82,18 +87,22 @@ color:#D5C9C9
 }
 
 h1 {
-    font-family: 'Quattrocento', serif;
+    font-family: 'Didact Gothic', sans-serif;
+    letter-spacing: 2px;
 }
 
 p, h4, h3 {
     margin-block-end: 5px;
     margin-block-start: 5px;
+    font-family: 'Lato', sans-serif;
+
 }
 
 .small{
-    font-size: 16px;
+    font-size: 20px;
     margin-bottom: 10px;
     font-weight: lighter;
+    font-style: italic;
 }
 
 

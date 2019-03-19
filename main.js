@@ -4,14 +4,14 @@ const baseUrl = 'https://collectionapi.metmuseum.org/public/collection/v1/search
 // Array for iterating through index items
 let imageIndex = 0
 let objIDs = [];
-
+let search = ''
 // When user clicks submit button
 function watchForm() {
     $('form').submit(event => {
     event.preventDefault();
         const query = 'q'
-        let search = $('#search-term').val();
-        $('.keyword').text(`Results for "${search}"`)
+         search = $('#search-term').val();
+        
         const url = baseUrl + '?' + query + '=' + search;
         getUrl(url);
        $('.results').empty();
@@ -61,10 +61,12 @@ function getObjectUrl() {
         .catch(err => {
             $('#message').text(`${err}`);
         });
+    console.log(url)
 }
 // Display search results
 
 function showResults(responseJson) {
+
     // Returned JSON array from keyword search
     let keywordMatchArray = responseJson;
     // Empties error or loading messages
@@ -73,10 +75,14 @@ function showResults(responseJson) {
     // Empties container from previous searches
     $('.results').empty();
     $('.info').empty();
+    $('.keyword').text(`Results for "${search}". Item no.${imageIndex + 1} out of ${objIDs.length}`)
     // Displays images
     $('.results').append(
-        `<a target='_blank' href='${keywordMatchArray.primaryImage}'><img src=${keywordMatchArray.primaryImage} class='img'></a>
-        <p class="small">Click picture for full size image</p> `)
+        
+        `<a data-lightbox="${keywordMatchArray.primaryImage}" href="${keywordMatchArray.primaryImage}"><img src=${keywordMatchArray.primaryImage} class='img'></a>
+        <p class="small">Click picture for full size image</p>
+        `)
+
     // Displays artwork info
    $('.info').append(
     `<a target='_blank' href='https://en.wikipedia.org/wiki/${keywordMatchArray.artistDisplayName}'><h3>${keywordMatchArray.artistDisplayName}</h3></a>
@@ -88,9 +94,10 @@ function showResults(responseJson) {
     <p>${keywordMatchArray.period}</p>
     <p>${keywordMatchArray.dynasty}</p>
     <p>${keywordMatchArray.culture}</p>
-    <button id='next'>Next item</button>`   
+    <button id='next'>Next item</button>
+    `   
     );   
-       console.log(responseJson)
+       //console.log(url)
         // Fetches the next index in the array when clicking the 'next' button
     $('#next').on('click', function(){
     imageIndex++;
