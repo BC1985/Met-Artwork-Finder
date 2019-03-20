@@ -15,27 +15,28 @@ body {
 /* error message */
 
 #message{
-    font-size:20px;
+    font-size:18px;
     font-weight: lighter;
+}
+
+#search-term{
+    font-size: 16px;
 }
 
 .top-header{
     background-image: url(images/art-creative-creativity-20967.jpg);
+    border-bottom: #1C2833 4px solid;
     background-size: cover;
     background-position:-130px 0px;
     height: 50vh;
     display: none;
-     /* background: 
-    linear-gradient(
-      rgba(85, 84, 81, 0.8), 
-      rgba(85, 84, 81, 0.8)
-    ),
-    url(images/photo-1512075936709-bc355655b4f6.jpeg); */
+
  }
+
 
 .top-header-hero{
     
-    margin-top: 15px;
+    margin-top: 20%;
     color:white;
 }
 /* Placeholder font size property*/
@@ -129,7 +130,7 @@ button {
     display:inline-block;
     margin:5px;
     font-family: 'Lato', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: lighter;
 }
 
@@ -173,7 +174,7 @@ p, h4, h3 {
 
 /* for call to action strings */
 .small{
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 10px;
     font-weight: lighter;
     font-style: italic;
@@ -218,7 +219,7 @@ footer  {
 
     header {
     margin-top: 20vh;
-    padding: 80px;
+    padding: 60px;
      background:
         linear-gradient(
         rgb(85, 84, 81, 0.8), 
@@ -239,8 +240,15 @@ h2  {
     
 }
 
+.container  {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom:50px;
+    
+}
 .img {
-    width:60%;
+    width:400px;
  
 }
 
@@ -281,7 +289,7 @@ input {
 
 
 .wrapper{
-    width:600px;
+    width:100%;
 }
 
 

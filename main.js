@@ -14,8 +14,12 @@ function takeToSearchEngine(){
     $('#form-link').on('click', function(){
         $('form').removeClass('hidden');
         $('.hero').hide();
-        $('header').css('background','none');
-        $('header').css('margin-top', '30px');
+        $('header').css({
+            'background':'none',
+            'margin-top': '30px',
+            'padding':'30px'
+        });
+        // $('header').css('margin-top', '30px');
         //$('.top-header').removeClass('hidden');
         $('.top-header').css('display', 'block');
         changeBackground();
@@ -31,8 +35,10 @@ function changeBackground(){
     // $('.top-header').append(`
     // <img src="images/art-creative-creativity-20967.jpg" class='img-big'>
     // `);
-    $('body').css('background-color', '#4E4343');
-    $('body').css('background-image', 'none');
+    $('body').css({
+        'background-color': '#4E4343',
+        'background-image': 'none'
+    });
 
 
 }
