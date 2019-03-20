@@ -1,22 +1,65 @@
 body {
- 
-    background-color: #4E4343;
+    /* background-color: #4E4343; */
     color:#D5C9C9;
     box-sizing: border-box;
-    margin:40px 0px 0px 0px;
+    margin:0px;
     height: 100%;    
     position: relative;
-    padding:10px;
     font-family: 'Lato', sans-serif;
+    background-image: url(images/met.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+/* error message */
 
+#message{
+    font-size:20px;
+    font-weight: lighter;
+}
+
+.top-header{
+    background-image: url(images/art-creative-creativity-20967.jpg);
+    background-size: cover;
+    background-position:-130px 0px;
+    height: 50vh;
+    display: none;
+     /* background: 
+    linear-gradient(
+      rgba(85, 84, 81, 0.8), 
+      rgba(85, 84, 81, 0.8)
+    ),
+    url(images/photo-1512075936709-bc355655b4f6.jpeg); */
+ }
+
+.top-header-hero{
+    
+    margin-top: 15px;
+    color:white;
+}
+/* Placeholder font size property*/
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-size:15px;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  font-size:15px;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  font-size:15px;
+}
+:-moz-placeholder { /* Firefox 18- */
+  font-size:15px;
 }
 
 
 .results{
-
     text-align: center;
-    
+
 }
+    /*artwork info  */
+
 .info { 
     padding:10px;
     text-align: center;
@@ -30,7 +73,9 @@ body {
     width:250px;
     border:2px solid black;
     margin-top:10px;
-
+}
+.img-big{
+    width:30vw;
 }
 .hidden {
     display:none;
@@ -40,6 +85,22 @@ body {
     font-style: italic; 
 }
 
+/* header attributes */
+
+header {
+    margin-top: 25vh;
+    padding: 20px;
+     background:
+        linear-gradient(
+        rgb(85, 84, 81, 0.8), 
+         rgba(85, 84, 81, 0.8)
+        );
+        background-repeat: no-repeat;
+}
+
+/* header > h1{
+    font-size: 2em;
+} */
 
 input {
     width:200px;
@@ -63,32 +124,44 @@ button {
 #next{
     margin:10px;
 }
-
+    /* div for displaying used keyword and image counter */
 .keyword{
     display:inline-block;
     margin:5px;
     font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-weight: lighter;
 }
 
 .container  {
-text-align: center;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
     margin-bottom:50px;
+    
 }
 
-a:link{
+a:link  {
 color:#D5C9C9;
 }
-a:visited{
-color:#D5C9C9
+a:visited   {
+color:#D5C9C9;
+}
+a:hover {
+color:white;
 
 }
 
 h1 {
     font-family: 'Didact Gothic', sans-serif;
     letter-spacing: 2px;
+}
+
+h2 {
+    font-weight: lighter;
+    font-size: 1.2em;
+    
+
 }
 
 p, h4, h3 {
@@ -98,6 +171,7 @@ p, h4, h3 {
 
 }
 
+/* for call to action strings */
 .small{
     font-size: 20px;
     margin-bottom: 10px;
@@ -128,6 +202,8 @@ footer  {
 }
 .wrapper{
     width:700px;
+    text-align: center;
+
 }
 
 .info{
@@ -140,15 +216,57 @@ footer  {
 /* Desktops and laptops ----------- */
 @media only screen  and (min-width : 1224px) {
 
+    header {
+    margin-top: 20vh;
+    padding: 80px;
+     background:
+        linear-gradient(
+        rgb(85, 84, 81, 0.8), 
+         rgba(85, 84, 81, 0.8)
+        );
+        background-repeat: no-repeat;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2  {
+    font-size: 150%;
+    width:100%;
+    
+    
+    
+}
+
 .img {
     width:60%;
  
 }
 
-
-h1 {
-    font-size: 3em;
+.img-big{
+    width:20vw;
 }
+.top-header{
+    background-image: url(images/art-creative-creativity-20967.jpg);
+    background-size: cover;
+    background-position:20% 60%;
+    height: 50vh;
+    display: none;
+     /* background: 
+    linear-gradient(
+      rgba(85, 84, 81, 0.8), 
+      rgba(85, 84, 81, 0.8)
+    ),
+    url(images/photo-1512075936709-bc355655b4f6.jpeg); */
+ }
+
+.top-header-hero{
+    margin-top: 300px;
+    color:white;
+    font-size: 4em;
+}
+
 
 p, h3, h4 {
     font-size: 120%;
@@ -165,6 +283,8 @@ input {
 .wrapper{
     width:600px;
 }
+
+
 
  /*DONT TOUCH  */
 }

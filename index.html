@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Met Artwork Finder</title>
+    <title>The Metropolitan Museum Artwork Finder</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/css/lightbox.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css">
@@ -13,10 +13,15 @@
 </head>
 <body>
     <div class="container">
-        <header class="header" role="banner">
-            <h1>The Metropolitan Museum Artwork Finder</h1>
-            <h2>Browse artworks by keyword</h2>
-            <form role="search">
+        <div class="top-header">
+            <h1 class="top-header-hero">The Metropolitan Museum Artwork Finder</h1>
+        </div>
+        <header class="header">
+            <div class="hero">
+                <h1>The Metropolitan Museum Artwork Finder</h1>
+                    <a href="#" id="form-link"><h2>Browse The Metropolitan Muesum catalog</h2></a>
+            </div>
+            <form role="search" class='hidden'>
                 <input type="text" id="search-term"
                  placeholder="Example: flowers" required>
                 <button type="submit">Search</button>
