@@ -24,7 +24,13 @@ body {
 }
 
 .top-header{
-    background-image: url(images/art-creative-creativity-20967.jpg);
+    background-image: 
+    linear-gradient(
+      rgba(102, 94, 94, 0.45), 
+      rgba(102, 94, 94, 0.45)
+    ),
+    
+    url(images/art-creative-creativity-20967.jpg);
     border-bottom: #1C2833 4px solid;
     background-size: cover;
     background-position:-130px 0px;
@@ -256,17 +262,17 @@ h2  {
     width:20vw;
 }
 .top-header{
-    background-image: url(images/art-creative-creativity-20967.jpg);
+    background-image: 
+     linear-gradient(
+      rgba(102, 94, 94, 0.45), 
+      rgba(102, 94, 94, 0.45)
+    ),
+    url(images/art-creative-creativity-20967.jpg);
     background-size: cover;
     background-position:20% 60%;
     height: 50vh;
     display: none;
-     /* background: 
-    linear-gradient(
-      rgba(85, 84, 81, 0.8), 
-      rgba(85, 84, 81, 0.8)
-    ),
-    url(images/photo-1512075936709-bc355655b4f6.jpeg); */
+    
  }
 
 .top-header-hero{
