@@ -4,8 +4,11 @@
 
 https://bc1985.github.io/Met-Artwork-Finder/
 
-##### Screenshot
-<img src="images/Screenshot.png" width="500">
+##### Screenshots
+<img src="images/Screenshot3.png" width="500">
+<img src="images/Screenshot2.png" width="500">
+<img src="images/Screenshot4.png" width="500">
+
 
 ##### Summary
 
@@ -25,8 +28,3 @@ Note: Some keywords will not be apparent in the item description, however, they 
 - Detailed information about each artwork.
 - Links to artist Wikipedia page (when applicable).
 - Links to high resolution images from clickable image.
-
-##### Future features to be implemented
-
-- Multiple thumbnail search results with expanded information upon click.
-
