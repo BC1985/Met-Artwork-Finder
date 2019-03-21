@@ -1,5 +1,5 @@
+
 body {
-    /* background-color: #4E4343; */
     color:#D5C9C9;
     box-sizing: border-box;
     margin:0px;
@@ -167,8 +167,7 @@ h1 {
 h2 {
     font-weight: lighter;
     font-size: 1.2em;
-    
-
+    font-weight: lighter;
 }
 
 p, h4, h3 {
@@ -195,7 +194,7 @@ footer  {
     text-align:center;
     width:100%;
     margin-top:40px;
-}
+    }
 
 
 /* iPads (portrait and landscape) ----------- */
@@ -254,7 +253,7 @@ h2  {
     
 }
 .img {
-    width:400px;
+    width:450px;
  
 }
 

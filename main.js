@@ -19,17 +19,13 @@ function takeToSearchEngine(){
             'margin-top': '30px',
             'padding':'30px'
         });
-        // $('header').css('margin-top', '30px');
-        //$('.top-header').removeClass('hidden');
         $('.top-header').css('display', 'block');
         changeBackground();
     });
-
 }
 
 function changeBackground(){
      $('form').prepend(`
-     
          <p class="small">Enter keyword to browse artworks</p>
     `)
     // $('.top-header').append(`
@@ -39,8 +35,6 @@ function changeBackground(){
         'background-color': '#4E4343',
         'background-image': 'none'
     });
-
-
 }
 // When user clicks submit button
 function watchForm() {
@@ -52,6 +46,7 @@ function watchForm() {
         const url = baseUrl + '?' + query + '=' + search;
         getUrl(url);
        $('.results').empty();
+       
 });
 }
 // ACCESS ENTIRE CATALOG
@@ -75,7 +70,8 @@ const searching = 'Searching...'
             $('#message').text(`${error}`);
             $('#search-term').val('');
             $('.keyword').empty();
-        });       
+        });  
+             
 }
 // Get array of keyword-related items
 
@@ -96,6 +92,8 @@ function getObjectUrl() {
             throw new Error(error);
         })
         .then(responseJson => showResults(responseJson))
+        .then(scroll())
+
         .catch(err => {
             $('#message').text(`${err}`);
         });
@@ -133,14 +131,21 @@ function showResults(responseJson) {
     <p>${keywordMatchArray.culture}</p>
     <button id='next'>Next item</button>
     `   
-    );   
+    ); 
         // Fetches the next index in the array when clicking the 'next' button
     $('#next').on('click', function(){
     imageIndex++;
+    scroll();
     getObjectUrl()
     })
     // Empties search field
     $('#search-term').val('');
+}
+
+function scroll() {
+    $('html, body').animate({
+        scrollTop: $("#results").offset().top
+    }, 1000); 
 }
 
 function renderPage() {
