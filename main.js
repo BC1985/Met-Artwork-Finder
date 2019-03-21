@@ -28,9 +28,6 @@ function changeBackground(){
      $('form').prepend(`
          <p class="small">Enter keyword to browse artworks</p>
     `)
-    // $('.top-header').append(`
-    // <img src="images/art-creative-creativity-20967.jpg" class='img-big'>
-    // `);
     $('body').css({
         'background-color': '#4E4343',
         'background-image': 'none'
@@ -84,7 +81,7 @@ function getObjectUrl() {
     // Handle DOM elements when fetching URL
         .then($('#message').text(loading))
         .then($('.info').empty())
-        .then($('.results').empty())
+        // .then($('.results').empty())
               .then(response => {
             if (response.ok) {  
                 return response.json();
@@ -141,7 +138,7 @@ function showResults(responseJson) {
     // Empties search field
     $('#search-term').val('');
 }
-
+// Focuses on the image when clicking next
 function scroll() {
     $('html, body').animate({
         scrollTop: $("#results").offset().top
@@ -154,5 +151,3 @@ function renderPage() {
 }
 
 $(renderPage)
-
-

@@ -6,11 +6,9 @@ body {
     height: 100%;    
     position: relative;
     font-family: 'Lato', sans-serif;
-    background-image: url(images/met.jpg);
+    background: url(images/met.jpg) no-repeat fixed center;
     background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
+
 }
 /* error message */
 
@@ -24,21 +22,13 @@ body {
 }
 
 .top-header{
-    background-image: 
-    linear-gradient(
-      rgba(102, 94, 94, 0.45), 
-      rgba(102, 94, 94, 0.45)
-    ),
-    
-    url(images/art-creative-creativity-20967.jpg);
+    background-image: url(images/art-creative-creativity-20967.jpg);
     border-bottom: #1C2833 4px solid;
     background-size: cover;
     background-position:-130px 0px;
-    height: 50vh;
+    height: 30vh;
     display: none;
-
  }
-
 
 .top-header-hero{
     
@@ -104,10 +94,6 @@ header {
         );
         background-repeat: no-repeat;
 }
-
-/* header > h1{
-    font-size: 2em;
-} */
 
 input {
     width:200px;
@@ -197,6 +183,27 @@ footer  {
     }
 
 
+@media only screen and (min-width : 321px) {
+
+    .top-header{
+    background-image: url(images/art-creative-creativity-20967.jpg);
+    border-bottom: #1C2833 4px solid;
+    background-size: cover;
+    background-position: center;
+    height: 30vh;
+    display: none;
+ }
+
+.top-header-hero{
+    
+    margin-top: 50px;
+    color:white;
+  text-align: center;
+}
+
+}
+
+
 /* iPads (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1224px) {
 
@@ -261,12 +268,7 @@ h2  {
     width:20vw;
 }
 .top-header{
-    background-image: 
-     linear-gradient(
-      rgba(102, 94, 94, 0.45), 
-      rgba(102, 94, 94, 0.45)
-    ),
-    url(images/art-creative-creativity-20967.jpg);
+    background-image: url(images/art-creative-creativity-20967.jpg);
     background-size: cover;
     background-position:20% 60%;
     height: 50vh;
