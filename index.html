@@ -1,39 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>The Metropolitan Museum Artwork Finder</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/css/lightbox.min.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
-    <link href="https://fonts.googleapis.com/css?family=Didact+Gothic&vertlato" rel="stylesheet">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>The Metropolitan Museum Artwork Browser</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/css/lightbox.min.css"
+    />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Didact+Gothic&vertlato"
+      rel="stylesheet"
+    />
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-<script src ='https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/js/lightbox.min.js'></script>
-</head>
-<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/js/lightbox.min.js"></script>
+  </head>
+  <body>
     <div class="container">
-        <div class="top-header">
-            <h1 class="top-header-hero">The Metropolitan Museum Artwork Finder</h1>
+      <div class="top-header">
+        <h1 class="top-header-hero">The Metropolitan Museum Artwork Browser</h1>
+      </div>
+      <header class="header">
+        <div class="hero">
+          <h1>The Metropolitan Museum Artwork Browser</h1>
+          <a href="#" id="form-link"
+            ><h2>Browse The Metropolitan Muesum catalog</h2></a
+          >
         </div>
-        <header class="header">
-            <div class="hero">
-                <h1>The Metropolitan Museum Artwork Finder</h1>
-                    <a href="#" id="form-link"><h2>Browse The Metropolitan Muesum catalog</h2></a>
-            </div>
-            <form role="search" class='hidden'>
-                <input type="text" id="search-term"
-                 placeholder="Example: flowers" required>
-                <button type="submit">Search</button>
-            </form>
-                        <p class="keyword"></p>
-            <div id="message"></div>
-        </header>
-        <div class="wrapper">
+        <form role="search" class="hidden">
+          <input
+            type="text"
+            id="search-term"
+            placeholder="Example: flowers"
+            required
+          />
+          <button type="submit">Search</button>
+        </form>
+        <p class="keyword"></p>
+        <div id="message"></div>
+      </header>
+      <div class="wrapper">
         <div class="results" id="results"></div>
         <div class="info"></div>
-        </div> 
+      </div>
     </div>
-        <script src="main.js"></script>
-</body>
+    <script src="main.js"></script>
+  </body>
 </html>
