@@ -2,7 +2,7 @@
 
 #### A simple app for looking up artworks from the Metropolitan Art Museum catalog by keyword search.
 
-https://bc1985.github.io/Met-Artwork-Finder/
+## [Live app](https://bc1985.github.io/Met-Artwork-Finder/)
 
 ##### Screenshots
 <img src="images/Screenshot3.png" width="500">
