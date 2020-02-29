@@ -6,8 +6,7 @@ https://bc1985.github.io/Met-Artwork-Finder/
 
 ##### Screenshots
 <img src="images/Screenshot3.png" width="500">
-<img src="images/Screenshot2.png" width="500">
-<img src="images/Screenshot4.png" width="500">
+<img src="images/Screenshot.png" width="500">
 
 
 ##### Summary
@@ -20,7 +19,7 @@ Note: Some keywords will not be apparent in the item description, however, they 
 
 - HTML 
 - CSS 
-- JS
+- jQuery
 
 ##### Features
 - Access to The Metropolitan Museum of Art's thousands of fascinating artworks from ancient history to modern day.
