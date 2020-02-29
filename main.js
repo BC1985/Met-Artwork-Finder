@@ -15,11 +15,9 @@ function takeToSearchEngine(){
         $('form').removeClass('hidden');
         $('.hero').hide();
         $('header').css({
-            'background':'none',
-            'margin-top': '30px',
-            'padding':'30px'
+            'background':'none', 'margin-top': '0'           
         });
-        $('.top-header').css('display', 'block');
+        $('.top-header').css('display', 'flex');
         changeBackground();
     });
 }
@@ -29,7 +27,7 @@ function changeBackground(){
          <p class="small">Enter keyword to browse artworks</p>
     `)
     $('body').css({
-        'background-color': '#4E4343',
+        'background-color': '#fdfbfb',
         'background-image': 'none'
     });
 }
@@ -108,41 +106,61 @@ function showResults(responseJson) {
     // Empties container from previous searches
     $('.results').empty();
     $('.info').empty();
-    $('.keyword').text(`Results for "${search}". Item no. ${imageIndex + 1}/ ${objIDs.length}`)
+    $('.keyword').text(`Results for "${search}". Item no. ${imageIndex + 1}/ ${objIDs.length}`)   
     // Display image and open in lightbox on click
     $('.results').append(
         `<a data-lightbox="${keywordMatchArray.primaryImage}" href="${keywordMatchArray.primaryImage}"><img src=${keywordMatchArray.primaryImage} class='img'></a>
         <p class="small">Click picture for full size image</p>
         `)
-
-    // Displays artwork info
-   $('.info').append(
-    `<a target='_blank' href='https://en.wikipedia.org/wiki/${keywordMatchArray.artistDisplayName}'><h3>${keywordMatchArray.artistDisplayName}</h3></a>
-    <p>${keywordMatchArray.artistDisplayBio}</p>
-    <h4 class='title'>${keywordMatchArray.title}</h4>
-    <p>${keywordMatchArray.objectDate}</p>
-    <p>${keywordMatchArray.medium}</p>
-    <p>${keywordMatchArray.country}</p>
-    <p>${keywordMatchArray.period}</p>
-    <p>${keywordMatchArray.dynasty}</p>
-    <p>${keywordMatchArray.culture}</p>
-    <button id='next'>Next item</button>
-    `   
+        
+        // Displays artwork info
+    $('.info').append(   
+        `<h2 class='title'>${keywordMatchArray.title}</h2>
+        <p>${keywordMatchArray.artistDisplayName}</p>
+            <p>${keywordMatchArray.artistDisplayBio}</p>
+            <p>${keywordMatchArray.objectDate}</p>
+            <p>${keywordMatchArray.medium}</p>
+            <p>${keywordMatchArray.country}</p>
+            <p>${keywordMatchArray.period}</p>
+            <p>${keywordMatchArray.dynasty}</p>
+            <p>${keywordMatchArray.culture}</p>
+            <div class="btn-div">
+            <button id='next'>Next item</button>
+            <button id='back'>Previous item</button>
+            </div>`
     ); 
-        // Fetches the next index in the array when clicking the 'next' button
+    // Fetches the next index in the array when clicking the 'next' button
     $('#next').on('click', function(){
-    imageIndex++;
-    scroll();
-    getObjectUrl()
+        imageIndex++;
+        scroll();
+        getObjectUrl()
+        $('.keyword').empty()
     })
     // Empties search field
     $('#search-term').val('');
+
+    // disables back button if shown item is first in the array
+    if (imageIndex === 0) {
+        $('#back').attr('disabled', true)
+        } else {
+        $('#back').removeAttr('disabled')        
+    }
+    
+    $('#back').on('click', function(){
+        // disable back function if shown item is first in the arry
+        if (imageIndex !== 0) {
+            imageIndex--;
+        }        
+        $('#search-term').val('');
+        scroll();
+        getObjectUrl()
+    })
 }
 // Focuses on the image when clicking next
 function scroll() {
     $('html, body').animate({
         scrollTop: $("#results").offset().top
-    }, 1000); 
+    }, 500); 
 }
 
 function renderPage() {
