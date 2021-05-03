@@ -125,8 +125,8 @@ function showResults(responseJson) {
             <p>${keywordMatchArray.dynasty}</p>
             <p>${keywordMatchArray.culture}</p>
             <div class="btn-div">
-            <button id='next'>Next item</button>
             <button id='back'>Previous item</button>
+            <button id='next'>Next item</button>
             </div>`
     ); 
     // Fetches the next index in the array when clicking the 'next' button
